@@ -1,6 +1,3 @@
-// 1_ADDRESS.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include <cstdlib>
 #include <string>
@@ -28,11 +25,11 @@ address::address(std::string city_name_, std::string street_name_, int house_num
     house_number = house_number_;
     apartment_number = apartment_number_;
 }
-//Создайте в вашем классе метод, который собирает строку для вывода в файл.
+//РЎРѕР·РґР°Р№С‚Рµ РІ РІР°С€РµРј РєР»Р°СЃСЃРµ РјРµС‚РѕРґ, РєРѕС‚РѕСЂС‹Р№ СЃРѕР±РёСЂР°РµС‚ СЃС‚СЂРѕРєСѓ РґР»СЏ РІС‹РІРѕРґР° РІ С„Р°Р№Р».
 
 std::string address::get_output_address(std::string city_name, std::string street_name, int house_number, int apartment_number)
 {
-    //Формат вывода адреса: <название города>, <название улицы>, <номер дома>, <номер квартиры>.
+    //Р¤РѕСЂРјР°С‚ РІС‹РІРѕРґР° Р°РґСЂРµСЃР°: <РЅР°Р·РІР°РЅРёРµ РіРѕСЂРѕРґР°>, <РЅР°Р·РІР°РЅРёРµ СѓР»РёС†С‹>, <РЅРѕРјРµСЂ РґРѕРјР°>, <РЅРѕРјРµСЂ РєРІР°СЂС‚РёСЂС‹>.
     return city_name + "," + " " + street_name + "," + " " + std::to_string(house_number) + "," + " " + std::to_string(apartment_number);
 
 }
@@ -68,7 +65,7 @@ int main() {
         fin >> Hnumber_2;
         fin >> Anum_2;
         std::cout << N << std::endl;
-        //Для хранения всех адресов, экземпляров вашего класса, заведите динамический массив типа address* 
+        //Р”Р»СЏ С…СЂР°РЅРµРЅРёСЏ РІСЃРµС… Р°РґСЂРµСЃРѕРІ, СЌРєР·РµРјРїР»СЏСЂРѕРІ РІР°С€РµРіРѕ РєР»Р°СЃСЃР°, Р·Р°РІРµРґРёС‚Рµ РґРёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ С‚РёРїР° address* 
         std::ofstream fout("out.txt", std::ios::trunc);
         address* mas = new address[N];
         fout << N << std::endl;
@@ -107,3 +104,4 @@ int main() {
 //   4. Use the Error List window to view errors
 //   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
 //   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+
