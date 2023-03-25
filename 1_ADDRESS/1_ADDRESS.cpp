@@ -7,10 +7,9 @@
 class address
 {
 public:
-    address(std::string city_name, std::string street_name, int house_number, int apartment_number);
     address();
-    void mainFunc();
-    void get_output_address(std::string city_name_, std::string street_name_, int house_number_, int apartment_number_);
+    address(std::string city_name_, std::string street_name_, int house_number_, int apartment_number_);
+    void get_output_address();
 
 private:
     std::string city_name;
@@ -19,19 +18,19 @@ private:
     int apartment_number;
 };
 
-address::address() { }
+address::address() {}
 
-address::address(std::string city_name_, std::string street_name_, int house_number_, int apartment_number_)
+address::address(std::string city_name_, std::string street_name_, int house_number_, int apartment_number_) : city_name { city_name_ }, street_name { street_name_ }, house_number { house_number_ }, apartment_number{ apartment_number_ }
 {
-    city_name = city_name_;
-    street_name = street_name_;
-    house_number = house_number_;
-    apartment_number = apartment_number_;
+    //city_name = city_name_;
+    //street_name = street_name_;
+    //house_number = house_number_;
+    //apartment_number = apartment_number_;
 
-    get_output_address(city_name, street_name, house_number, apartment_number);
+    std::cout << city_name + "," + " " + street_name + "," + " " + std::to_string(house_number) + "," + " " + std::to_string(apartment_number) << std::endl;
 }
 
-void address::mainFunc()
+void address::get_output_address()
 {
     std::string city_name_;
     std::string street_name_;
@@ -55,29 +54,19 @@ void address::mainFunc()
         fin >> mas[i].street_name;
         fin >> mas[i].house_number;
         fin >> mas[i].apartment_number;
-        
     }
 
-    for (int i = N-1; i >= 0; i--)
+    for (int i = N - 1; i >= 0; i--)
     {
-        fout << mas[i].city_name + "," + " ";
-        fout << mas[i].street_name + "," + " ";
-        fout << std::to_string(mas[i].house_number) + "," + " ";
+        fout << mas[i].city_name + ", ";
+        fout << mas[i].street_name + ", ";
+        fout << std::to_string(mas[i].house_number) + ", ";
         fout << std::to_string(mas[i].apartment_number) << std::endl;
 
-        city_name_ = mas[i].city_name;
-        street_name_ = mas[i].street_name;
-        house_number_ = mas[i].house_number;
-        apartment_number_ = mas[i].apartment_number;
-
-        address(city_name_, street_name_, house_number_, apartment_number_);
+        address(mas[i].city_name, mas[i].street_name, mas[i].house_number, mas[i].apartment_number);    
     }
-}
-
-void address::get_output_address(std::string city_name_, std::string street_name_, int house_number_, int apartment_number_)
-{ 
-    std::cout << city_name_ + "," + " " + street_name_ + "," + " " + std::to_string(house_number_) + "," + " " + std::to_string(apartment_number_) << std::endl;
-}
+    delete[]mas;
+} 
 
 int main()
 {
@@ -92,8 +81,9 @@ int main()
     }
     else if (fin.is_open())
     {
-        info.mainFunc();
+        info.get_output_address();
     }
 
+    fin.close();
     return 0;
 }
