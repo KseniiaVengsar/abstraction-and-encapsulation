@@ -1,6 +1,3 @@
-// ADDRESS_KV_2.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include <cstdlib>
 #include <string>
@@ -19,20 +16,6 @@ public:
         apartment_number = x;
     }
 
-
-   /* void set_city_name(std::string k) {
-        city_name = k;
-    }
-    void set_street_name(std::string j) {
-        street_name = j;
-    }
-    void set_house_number(int u) {
-        house_number = u;
-    }
-    void set_apart_number(int x) {
-        apartment_number = x;
-    }*/
-
     std::string outAddress();
 
 private:
@@ -45,7 +28,6 @@ private:
 
 std::string address::outAddress()
 {
- 
     return city_name + ", " + street_name + ", " + std::to_string(house_number) + ", " + std::to_string(apartment_number);
 }
 
@@ -83,53 +65,15 @@ int main()
             fin >> d;
 
             mas[i].setINFO(a, b, c, d);
-            mas[i].setINFO(a, b, c, d);
-            mas[i].setINFO(a, b, c, d);
-            mas[i].setINFO(a, b, c, d);
-
-            //fout << mas[i].outAddress() << std::endl;
-            //std::cout << mas[i].outAddress() << std::endl;
         }
 
-
-
-      for (int i = N - 1; i >= 0; i--)
+        for (int i = N - 1; i >= 0; i--)
         {
-          mas[i].setINFO(a, b, c, d);
-          mas[i].setINFO(a, b, c, d);
-          mas[i].setINFO(a, b, c, d);
-          mas[i].setINFO(a, b, c, d);
-
-             fout << mas[i].outAddress() << std::endl;
-             std::cout << mas[i].outAddress() << std::endl;
+            fout << mas[i].outAddress() << std::endl;
+            std::cout << mas[i].outAddress() << std::endl;
         }
-
-        
     }
     return 0;
     
 }
 
-
-
-
-
-
-/*For getter it is simply to do. You declare parameter that will specify element's index of array.
-
-For example
-
-int get_element( size_t index ) { return ( a[index] ); }
-
-For setter you can specify two parameters: element's index and a new value
-
-void set_element( size_t index, int value ) { a[index] = value; }
-
-Also you can overload operator [] if your array is a part of a class definition.
-void setINFO(int i, std::string k, std::string j, int u, int x) {
-
-            mas[i] = k;
-            mas[i] = j;
-            mas[i] = u;
-            mas[i] = x;
-        }*/
