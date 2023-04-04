@@ -34,7 +34,7 @@ std::string address::outAddress()
 int main()
 {
     setlocale(LC_ALL, "RU");
-    address info;
+    
     std::string a, b;
     int c = 0; int d = 0;
 
@@ -72,8 +72,9 @@ int main()
             fout << mas[i].outAddress() << std::endl;
             std::cout << mas[i].outAddress() << std::endl;
         }
+        delete[]mas;
     }
+    fin.close();
     return 0;
     
 }
-
